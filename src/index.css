@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
     --background: 45 20% 96%;
@@ -38,7 +34,6 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Wheel colors - pastel palette */
     --wheel-1: 270 45% 70%;
     --wheel-2: 142 50% 75%;
     --wheel-3: 160 40% 80%;
@@ -47,7 +42,6 @@ All colors MUST be HSL.
     --wheel-6: 142 60% 65%;
     --wheel-7: 180 35% 75%;
     
-    /* Button styles */
     --go-button: 142 55% 50%;
     --go-button-hover: 142 60% 45%;
     --add-button: 142 50% 48%;

@@ -57,7 +57,7 @@ export const OptionsInput = ({ options, onOptionsChange }: OptionsInputProps) =>
           onChange={(e) => setInputValue(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder="Add something"
-          className="flex-1 bg-white border-border text-foreground placeholder:text-muted-foreground"
+          className="flex-1 bg-gray-600 border-border text-foreground placeholder:text-muted-foreground"
         />
         <Button
           onClick={addOption}
