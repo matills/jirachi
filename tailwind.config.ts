@@ -57,6 +57,14 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        wheel: {
+          1: "hsl(var(--wheel-1))",
+          2: "hsl(var(--wheel-2))",
+          3: "hsl(var(--wheel-3))",
+          4: "hsl(var(--wheel-4))",
+          5: "hsl(var(--wheel-5))",
+          6: "hsl(var(--wheel-6))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -4,48 +4,35 @@
 
 @layer base {
   :root {
-    --background: 45 20% 96%;
-    --foreground: 220 15% 25%;
+    --background: 40 20% 94%;
+    --foreground: 160 10% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 25%;
+    --card-foreground: 160 10% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 25%;
+    --popover-foreground: 160 10% 25%;
 
-    --primary: 142 50% 55%;
+    --primary: 181 59% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 45% 70%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 46 52% 74%;
+    --secondary-foreground: 160 10% 25%;
 
-    --muted: 45 20% 90%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 40 15% 88%;
+    --muted-foreground: 160 5% 45%;
 
-    --accent: 330 60% 65%;
+    --accent: 181 59% 50%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 70% 60%;
+    --destructive: 340 70% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 85%;
-    --input: 220 15% 90%;
-    --ring: 142 50% 55%;
+    --border: 40 15% 85%;
+    --input: 40 15% 85%;
+    --ring: 181 59% 50%;
 
     --radius: 0.75rem;
-
-    --wheel-1: 270 45% 70%;
-    --wheel-2: 142 50% 75%;
-    --wheel-3: 160 40% 80%;
-    --wheel-4: 210 45% 75%;
-    --wheel-5: 330 60% 70%;
-    --wheel-6: 142 60% 65%;
-    --wheel-7: 180 35% 75%;
-    
-    --go-button: 142 55% 50%;
-    --go-button-hover: 142 60% 45%;
-    --add-button: 142 50% 48%;
-    --share-button: 330 55% 60%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -55,36 +42,43 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --wheel-1: 46 52% 74%;
+    --wheel-2: 181 59% 50%;
+    --wheel-3: 270 40% 70%;
+    --wheel-4: 330 50% 65%;
+    --wheel-5: 155 50% 80%;
+    --wheel-6: 200 45% 70%;
   }
 
   .dark {
-    --background: 220 20% 12%;
-    --foreground: 210 20% 90%;
+    --background: 160 15% 15%;
+    --foreground: 155 15% 90%;
 
-    --card: 220 20% 15%;
-    --card-foreground: 210 20% 90%;
+    --card: 160 15% 18%;
+    --card-foreground: 155 15% 90%;
 
-    --popover: 220 20% 15%;
-    --popover-foreground: 210 20% 90%;
+    --popover: 160 15% 18%;
+    --popover-foreground: 155 15% 90%;
 
-    --primary: 142 50% 55%;
+    --primary: 181 59% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 45% 65%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 46 52% 74%;
+    --secondary-foreground: 160 10% 25%;
 
-    --muted: 220 20% 20%;
-    --muted-foreground: 210 15% 60%;
+    --muted: 160 10% 25%;
+    --muted-foreground: 155 10% 65%;
 
-    --accent: 330 60% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 181 59% 50%;
+    --accent-foreground: 155 15% 90%;
 
-    --destructive: 0 70% 55%;
+    --destructive: 340 70% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 25%;
-    --input: 220 20% 25%;
-    --ring: 142 50% 55%;
+    --border: 160 15% 25%;
+    --input: 160 15% 25%;
+    --ring: 181 59% 50%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -104,5 +98,35 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .confetti {
+    animation: confetti-fall 5s ease-in forwards;
+  }
+
+  @keyframes confetti-fall {
+    0% {
+      transform: translateY(-10vh) rotate(0deg);
+      opacity: 1;
+    }
+    90% {
+      transform: translateY(110vh) rotate(972deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(120vh) rotate(1080deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes spin-to-winner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(var(--final-rotation));
+    }
   }
 }
