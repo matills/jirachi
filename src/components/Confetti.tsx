@@ -25,12 +25,12 @@ export const Confetti = () => {
   useEffect(() => {
     const generatePieces = () => {
       const newPieces: ConfettiPiece[] = [];
-      for (let i = 0; i < 80; i++) {
+      for (let i = 0; i < 50; i++) {
         newPieces.push({
           id: Date.now() + i + Math.random() * 1000,
           left: Math.random() * 100,
           color: colors[Math.floor(Math.random() * colors.length)],
-          delay: Math.random() * 2,
+          delay: Math.random() * 1.5,
           size: Math.random() * 12 + 6,
         });
       }
@@ -39,11 +39,14 @@ export const Confetti = () => {
 
     generatePieces();
     
-    const interval = setInterval(generatePieces, 2000);
+    const interval = setInterval(generatePieces, 1500);
 
     const cleanupInterval = setInterval(() => {
-      setPieces(prevPieces => prevPieces.slice(-200));
-    }, 3000);
+      setPieces(prevPieces => {
+        const cutoff = Date.now() - 6000;
+        return prevPieces.filter(piece => piece.id > cutoff);
+      });
+    }, 6000);
 
     return () => {
       clearInterval(interval);

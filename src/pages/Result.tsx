@@ -97,7 +97,7 @@ const Result = () => {
                 className="transition-all duration-300 group-hover:fill-white/90"
               />
             </svg>
-            <span className="absolute inset-0 flex items-center justify-center text-2xl md:text-3xl font-bold text-primary pb-4">
+            <span className="absolute inset-0 flex items-center justify-center text-2xl md:text-3xl font-bold text-primary">
               RESTART
             </span>
           </button>

@@ -84,7 +84,7 @@ const Options = () => {
           </div>
         </div>
 
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 overflow-y-auto pb-24 md:pb-0">
           {options.length === 0 ? (
             <div className="flex items-center justify-center h-full text-muted-foreground p-8 text-center">
               <p>Start adding options to create your wheel!</p>
@@ -115,7 +115,7 @@ const Options = () => {
         </div>
 
         {options.length > 0 && (
-          <div className="flex-shrink-0 border-t border-border p-4 bg-card">
+          <div className="flex-shrink-0 border-t border-border p-4 bg-card hidden md:block">
             <Button
               onClick={handleShare}
               variant="outline"
@@ -155,7 +155,7 @@ const Options = () => {
                 className="transition-all duration-300 group-hover:fill-[hsl(var(--primary)/0.9)]"
               />
             </svg>
-            <span className="absolute inset-0 flex items-center justify-center text-2xl md:text-3xl font-bold text-primary-foreground pb-4">
+            <span className="absolute inset-0 flex items-center justify-center text-2xl md:text-3xl font-bold text-primary-foreground">
               GO!
             </span>
           </button>

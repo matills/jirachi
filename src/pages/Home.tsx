@@ -37,7 +37,7 @@ const Home = () => {
               className="transition-all duration-300 group-hover:fill-[hsl(var(--primary)/0.9)]"
             />
           </svg>
-          <span className="absolute inset-0 flex items-center justify-center text-2xl md:text-3xl font-bold text-primary-foreground pb-4">
+          <span className="absolute inset-0 flex items-center justify-center text-2xl md:text-3xl font-bold text-primary-foreground">
             START
           </span>
         </button>
