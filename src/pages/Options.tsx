@@ -50,7 +50,10 @@ const Options = () => {
       toast.error("Add at least 2 options to spin!");
       return;
     }
-    const winner = options[Math.floor(Math.random() * options.length)];
+    const array = new Uint32Array(1);
+    window.crypto.getRandomValues(array);
+    const randomNumber = array[0] / (0xffffffff + 1);
+    const winner = options[Math.floor(randomNumber * options.length)];
     navigate("/result", { state: { winner, options } });
   };
 

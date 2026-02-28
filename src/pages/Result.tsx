@@ -30,13 +30,16 @@ const Result = () => {
     const winnerIndex = options.indexOf(winner);
     const segmentAngle = 360 / options.length;
     const winnerAngle = winnerIndex * segmentAngle;
-    
-    const randomOffset = (Math.random() - 0.5) * segmentAngle * 0.6;
-    
+
+    const array = new Uint32Array(1);
+    window.crypto.getRandomValues(array);
+    const randomNumber = array[0] / (0xffffffff + 1);
+    const randomOffset = (randomNumber - 0.5) * segmentAngle * 0.6;
+
     const baseRotation = 1800;
     const targetRotation = -(winnerAngle + segmentAngle / 2 + randomOffset);
     const calculatedRotation = baseRotation + targetRotation;
-    
+
     setFinalRotation(calculatedRotation);
 
     const spinTimer = setTimeout(() => {
@@ -62,10 +65,10 @@ const Result = () => {
 
       <div className="relative z-10 flex flex-col items-center space-y-8 px-4">
         {!showWinner && (
-          <WheelDisplay 
-            options={options} 
-            colors={colors} 
-            winner={winner} 
+          <WheelDisplay
+            options={options}
+            colors={colors}
+            winner={winner}
             spinning={spinning}
             finalRotation={finalRotation}
           />
